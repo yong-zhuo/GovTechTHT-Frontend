@@ -1,5 +1,5 @@
 import { students } from "../data/mockStudentData";
-import { getAverageCumulativeGpa, getAverageSemesterGpa, getCumulativeGpa, getSemesterGpa } from "./gpaUtils";
+import { getCumulativeGpa, getSemesterGpa, getTeacherAverageGpas } from "./gpaUtils";
 
 /** Get the last semester count*/
 const lastSemesterIndex = students[0].semesterGpa.length - 1;
@@ -15,11 +15,15 @@ export const convertStudentsData = (students) => {
 };
 
 export const convertTeachersData = (teachers) => {
-    return teachers.map(teacher => ({
-        id: teacher.id,
-        name: teacher.name,
-        avgLastSemesterGPA: getAverageSemesterGpa(teacher.semesterGpa, lastSemesterIndex),
-        avgCumulativeGPA: getAverageCumulativeGpa(teacher.semesterGpa, lastSemesterIndex)
-    }));
+    return teachers.map(teacher => {
+        const { avgLastSemesterGPA, avgCumulativeGPA } = getTeacherAverageGpas(students, teacher, lastSemesterIndex);
+        
+        return {
+            id: teacher.id,
+            name: teacher.name,
+            avgLastSemesterGPA,
+            avgCumulativeGPA
+        }
+    });
 }
 

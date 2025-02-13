@@ -51,3 +51,11 @@ export const getAverageCumulativeGpas = (students) => {
     }
     return averageCumulativeGpas;
 };
+
+export const getTeacherAverageGpas = (students, teacher, semesterIndex) => {
+    //Get the students taught by the teacher
+    const teacherStudents = students.filter(student => teacher.students.includes(student.id));
+    const avgLastSemesterGPA = getAverageSemesterGpa(teacherStudents, semesterIndex);
+    const avgCumulativeGPA = getAverageCumulativeGpa(teacherStudents, semesterIndex);
+    return { avgLastSemesterGPA, avgCumulativeGPA };
+};
