@@ -7,6 +7,7 @@ import StudentProfilePage from './pages/StudentProfilePage'
 import TeacherProfilePage from './pages/TeacherProfilePage'
 import HomePage from './pages/HomePage'
 import NavBar from './components/NavBar'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
               {/* Teacher Page */}
               <Route path="/teachers" element={<TeachersPage />} />
               <Route path="/teachers/:id" element={<TeacherProfilePage />} />
+              {/* Not Found Page */}
+              <Route path="*" element={<NotFoundPage />}/>
             </Routes>
           </div>
         </div>
