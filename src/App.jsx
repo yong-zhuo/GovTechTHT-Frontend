@@ -3,6 +3,7 @@ import './App.css'
 import SideBar from './components/SideBar'
 import StudentsPage from './pages/StudentsPage'
 import TeachersPage from './pages/TeachersPage'
+import ProfilePage from './pages/ProfilePage'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
               <Routes>
                 {/* Student Page*/}
                 <Route path="/students" element={<StudentsPage />} />
+                <Route path="/students/:id" element={<ProfilePage/>} />
                 {/* Teacher Page */}
                 <Route path="/teachers" element={<TeachersPage />} />
               </Routes>

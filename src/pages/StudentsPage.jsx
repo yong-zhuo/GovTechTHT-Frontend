@@ -2,7 +2,6 @@ import { useMemo } from "react"
 import { convertStudentsData } from "../utils/tableDataUtils"
 import { students } from "../data/mockStudentData"
 import PersonsPage from "./PersonsPage"
-import Student from "./Student"
 import { studentTableColumns } from "../data/tableColumns"
 
 const StudentsPage = () => {
@@ -11,7 +10,7 @@ const StudentsPage = () => {
 
     return (
         <>
-            <PersonsPage data={studentsData} tableColumns={studentTableColumns} SubRoute={Student} />
+            <PersonsPage data={studentsData} tableColumns={studentTableColumns}/>
         </>
     )
 }

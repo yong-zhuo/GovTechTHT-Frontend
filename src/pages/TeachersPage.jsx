@@ -3,7 +3,6 @@ import PersonsPage from "./PersonsPage"
 import { convertTeachersData } from "../utils/tableDataUtils"
 import { teachers } from "../data/mockTeacherData"
 import { teacherTableColumns } from "../data/tableColumns"
-import Teacher from "./Teacher"
 
 const TeachersPage = () => {
 
@@ -11,7 +10,7 @@ const TeachersPage = () => {
 
   return (
     <>
-      <PersonsPage data={teachersData} tableColumns={teacherTableColumns} SubRoute={Teacher} />
+      <PersonsPage data={teachersData} tableColumns={teacherTableColumns}/>
     </>
   )
 }

@@ -2,7 +2,7 @@
 const PersonDetailCard = ({ role, name, details, id }) => {
 
     return (
-        <div className="bg-white shadow p-5 rounded-lg flex flex-row justify-between items-center">
+        <div className="bg-white shadow rounded-lg flex flex-row justify-between items-center p-5 mt-5 w-full sm:w-3/4">
             <div className="flex flex-col">
                 <h1 className="text-2xl font-bold capitalize">{name}</h1>
                 <h2 className="text-md font-semibold capitalize">Role: {role}</h2>

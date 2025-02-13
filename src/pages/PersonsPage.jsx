@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Route, Routes, useLocation } from "react-router"
+import { useLocation } from "react-router"
 import DataTable from "../components/DataTable"
 import { students } from "../data/mockStudentData"
 import GPADoubleLineChart from "../components/GPADoubleLineChart"
 import { getAverageCumulativeGpas, getAverageSemesterGpas } from "../utils/gpaUtils"
 
-const PersonsPage = ({ data, tableColumns, SubRoute }) => {
+const PersonsPage = ({ data, tableColumns}) => {
 
   const location  = useLocation()
   const role = location.pathname.split('/')[1]
@@ -33,9 +33,6 @@ const PersonsPage = ({ data, tableColumns, SubRoute }) => {
           <DataTable data={data} columns={tableColumns} />
         </div>
       </div>
-      <Routes>
-        <Route path=":id" element={<SubRoute />} />
-      </Routes>
     </div>
   )
 }
