@@ -29,7 +29,7 @@ const DataTable = ({ columns, data }) => {
                 {/** Table Header */}
                 <thead className="text-left">
                     {table.getHeaderGroups().map((headerGroup) => (
-                        <tr key={headerGroup.id} className="bg-gray-100 ">
+                        <tr key={headerGroup.id} className="bg-gray-200 ">
                             {headerGroup.headers.map((header) =>
                                 <th key={header.id} onClick={header.column.getToggleSortingHandler()} className="cursor-pointer">
                                     <div className="flex flex-row items-center gap-1 text-sm sm:text-md sm:p-3">
@@ -53,7 +53,7 @@ const DataTable = ({ columns, data }) => {
                     {table.getRowModel().rows.map(row => (
                         <tr key={row.id}>
                             {row.getVisibleCells().map(cell => (
-                                <td key={cell.id} className="sm:p-3">
+                                <td key={cell.id} className="sm:p-3 border-b border-gray-300">
                                     {cell.column.id === 'name' ? (
                                         <Link to={`${location.pathname}/${row.original.id}`}
                                             className="underline hover:text-slate-400 transition">
