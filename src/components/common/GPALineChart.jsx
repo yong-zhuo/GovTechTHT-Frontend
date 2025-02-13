@@ -24,6 +24,7 @@ const GPALineChart = ({ firstDataSet, secondDataSet }) => {
 
     const options = {
         responsive: true,
+        aspectRatio: 2.7,
         plugins: {
             legend: { display: true, position: "top" },
         },
