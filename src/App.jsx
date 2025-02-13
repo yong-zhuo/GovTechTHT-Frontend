@@ -5,6 +5,7 @@ import StudentsPage from './pages/StudentsPage'
 import TeachersPage from './pages/TeachersPage'
 import StudentProfilePage from './pages/StudentProfilePage'
 import TeacherProfilePage from './pages/TeacherProfilePage'
+import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
             </div>
             <div className='flex-1 md:ml-48'>
               <Routes>
+                {/* Home Page */}
+                <Route path="/" element={<HomePage />} />
                 {/* Student Page*/}
                 <Route path="/students" element={<StudentsPage />} />
                 <Route path="/students/:id" element={<StudentProfilePage />} />
