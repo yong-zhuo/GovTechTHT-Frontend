@@ -10,7 +10,7 @@ function App() {
     <>
       <div>
         <BrowserRouter>
-          <div className='flex bg-gray-50 h-screen overflow-hidden'>
+          <div className='flex flex-row bg-gray-50 min-h-screen justify-between'>
             <div className='hidden sm:block'>
               <SideBar />
             </div>
