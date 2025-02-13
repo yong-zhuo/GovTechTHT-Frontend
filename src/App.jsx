@@ -12,15 +12,14 @@ function App() {
         <BrowserRouter>
           <div className='flex bg-gray-50'>
             <SideBar />
-          </div>
+            <Routes>
+              {/* Student Page*/}
+              <Route path="/students" element={<Students />} />
 
-          <Routes>
-            {/* Student Page*/}
-            <Route path="/students" element={<Students />} />
-            
-            {/* Teacher Page */}
-            <Route path="/teachers" element={<Teachers />} />
-          </Routes>
+              {/* Teacher Page */}
+              <Route path="/teachers" element={<Teachers />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </div>
     </>
