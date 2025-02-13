@@ -4,6 +4,7 @@ import SideBar from './components/SideBar'
 import StudentsPage from './pages/StudentsPage'
 import TeachersPage from './pages/TeachersPage'
 import StudentProfilePage from './pages/StudentProfilePage'
+import TeacherProfilePage from './pages/TeacherProfilePage'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Route path="/students/:id" element={<StudentProfilePage />} />
                 {/* Teacher Page */}
                 <Route path="/teachers" element={<TeachersPage />} />
+                <Route path="/teachers/:id" element={<TeacherProfilePage />} />
               </Routes>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { students } from "../data/mockStudentData";
+import { findStudentsTaughtByTeacher } from "./findUtils";
 
 /** Get total semesters */
 export const semesters = students[0].semesterGpa.length;
@@ -43,9 +44,9 @@ export const getAverageSemesterGpa = (students, semester) => {
 };
 
 /** Get the average cumulative GPA for a student in a particular semester */
-export const getAverageCumulativeGpa = (students, semesterIndex) => {
+export const getAverageCumulativeGpa = (students, semester) => {
     const totalGpa = students.reduce((acc, student) => {
-        return acc + getCumulativeGpa(student.semesterGpa, semesterIndex)
+        return acc + getCumulativeGpa(student.semesterGpa, semester)
     }, 0);
     
     return (totalGpa / students.length).toFixed(2)
@@ -72,9 +73,9 @@ export const getAverageCumulativeGpas = (students) => {
 };
 
 /** Get the average cumulative and last semester GPA for all students taught by the teacher*/
-export const getTeacherAverageGpas = (students, teacher, semester) => {
+export const getTeacherAverageGpas = (teacher, semester) => {
     //Get the students taught by the teacher
-    const teacherStudents = students.filter(student => teacher.students.includes(student.id))
+    const teacherStudents = findStudentsTaughtByTeacher(teacher)
     const avgLastSemesterGPA = getAverageSemesterGpa(teacherStudents, semester)
     const avgCumulativeGPA = getAverageCumulativeGpa(teacherStudents, semester)
     return { avgLastSemesterGPA, avgCumulativeGPA }

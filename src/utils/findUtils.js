@@ -8,3 +8,7 @@ export const findStudentById = (id) => {
 export const findTeacherById = (id) => {
     return teachers.find(teacher => teacher.id === parseInt(id))
 }
+
+export const findStudentsTaughtByTeacher = (teacher) => {
+    return students.filter(student => teacher.students.includes(student.id))
+}
