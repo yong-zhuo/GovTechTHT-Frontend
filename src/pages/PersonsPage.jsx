@@ -2,7 +2,7 @@
 import { Route, Routes, useLocation } from "react-router"
 import DataTable from "../components/common/DataTable"
 import { students } from "../data/mockStudentData"
-import GPALineChart from "../components/common/GPALineChart"
+import GPADoubleLineChart from "../components/common/GPADoubleLineChart"
 import { getAverageCumulativeGpas, getAverageSemesterGpas } from "../utils/gpaUtils"
 
 const PersonsPage = ({ data, tableColumns, SubRoute }) => {
@@ -26,7 +26,7 @@ const PersonsPage = ({ data, tableColumns, SubRoute }) => {
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col bg-white rounded-lg shadow p-5 mt-5 w-full sm:w-3/4">
           <span className="text-xl mb-3 font-semibold">GPA Line Chart</span>
-          <GPALineChart firstDataSet={averageSemesterGpas} secondDataSet={averageCumulativeGpas} />
+          <GPADoubleLineChart firstDataSet={averageSemesterGpas} secondDataSet={averageCumulativeGpas} />
         </div>
         <div className="flex flex-col bg-white rounded-lg shadow p-5 mt-5 w-full sm:w-3/4">
           <span className="text-xl mb-3 font-semibold capitalize">List of {pageType}</span>

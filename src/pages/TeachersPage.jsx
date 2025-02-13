@@ -9,7 +9,6 @@ const TeachersPage = () => {
 
   const teachersData = useMemo(() => convertTeachersData(teachers), [])
 
-
   return (
     <>
       <PersonsPage data={teachersData} tableColumns={teacherTableColumns} SubRoute={Teacher} />

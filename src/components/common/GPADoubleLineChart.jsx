@@ -3,7 +3,7 @@
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, defaults } from "chart.js/auto";
 
-const GPALineChart = ({ firstDataSet, secondDataSet }) => {
+const GPADoubleLineChart = ({ firstDataSet, secondDataSet }) => {
 
     const data = {
         labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
@@ -42,4 +42,4 @@ const GPALineChart = ({ firstDataSet, secondDataSet }) => {
     )
 }
 
-export default GPALineChart
+export default GPADoubleLineChart
