@@ -32,6 +32,7 @@ const GPALineChart = ({ firstDataSet, secondDataSet }) => {
             y: { beginAtZero: true, max: 4.0, title: { display: true, text: "GPA" } },
             x: { title: { display: true, text: "Semester" } },
         },
+        animation: false
     };
 
     return (
