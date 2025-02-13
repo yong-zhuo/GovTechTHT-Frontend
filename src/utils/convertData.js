@@ -4,6 +4,7 @@ import { getAverageCumulativeGpa, getAverageSemesterGpa, getCumulativeGpa, getSe
 /** Get the last semester count*/
 const lastSemester = students[0].semesterGpa.length - 1;
 
+/** Calculate the required GPA parameters and return a formatted object for the Table */
 export const convertStudentsData = (students) => {
     return students.map(student => ({
         id: student.id,

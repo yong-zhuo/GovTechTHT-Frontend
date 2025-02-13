@@ -2,7 +2,7 @@ export const getCumulativeGpa = (semesterGpa) => {
     const totalGpa = semesterGpa.reduce((acc, curr) => acc + curr, 0)
     const semesters = semesterGpa.length
 
-    return (totalGpa / semesters)
+    return (totalGpa / semesters).toFixed(2)
 }
 
 export const getSemesterGpa = (semesterGpa, semesterIndex) => {
@@ -16,12 +16,12 @@ export const getAverageSemesterGpa = (students, semesterIndex) => {
     const totalGpa = students.reduce((acc, student) => {
         return acc + getSemesterGpa(student.semesterGpa, semesterIndex);
     }, 0);
-    return (totalGpa / students.length);
+    return (totalGpa / students.length).toFixed(2);
 };
 
 export const getAverageCumulativeGpa = (students) => {
     const totalGpa = students.reduce((acc, student) => {
         return acc + getCumulativeGpa(student.semesterGpa);
     }, 0);
-    return (totalGpa / students.length);
+    return (totalGpa / students.length).toFixed(2);
 };

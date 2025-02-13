@@ -10,15 +10,18 @@ function App() {
     <>
       <div>
         <BrowserRouter>
-          <div className='flex bg-gray-50'>
-            <SideBar />
-            <Routes>
-              {/* Student Page*/}
-              <Route path="/students" element={<Students />} />
-
-              {/* Teacher Page */}
-              <Route path="/teachers" element={<Teachers />} />
-            </Routes>
+          <div className='flex bg-gray-50 h-screen overflow-hidden'>
+            <div className='hidden sm:block'>
+              <SideBar />
+            </div>
+            <div className='flex-1'>
+              <Routes>
+                {/* Student Page*/}
+                <Route path="/students" element={<Students />} />
+                {/* Teacher Page */}
+                <Route path="/teachers" element={<Teachers />} />
+              </Routes>
+            </div>
           </div>
         </BrowserRouter>
       </div>
