@@ -2,8 +2,6 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
 import Students from './pages/Students'
 import Teachers from './pages/Teachers'
-import Student from './pages/Student'
-import Teacher from './pages/Teacher'
 import SideBar from './components/SideBar'
 
 function App() {
@@ -17,13 +15,11 @@ function App() {
           </div>
 
           <Routes>
-            {/* Student related pages */}
+            {/* Student Page*/}
             <Route path="/students" element={<Students />} />
-            <Route path="/student/:id" element={<Student />} />
-
-            {/* Teacher related pages */}
+            
+            {/* Teacher Page */}
             <Route path="/teachers" element={<Teachers />} />
-            <Route path="/teacher/:id" element={<Teacher />} />
           </Routes>
         </BrowserRouter>
       </div>

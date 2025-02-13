@@ -1,6 +1,14 @@
+import { Route, Routes } from "react-router"
+import Teacher from "./Teacher"
+
 const Teachers = () => {
   return (
-    <div>Teachers</div>
+    <div>
+      Teachers
+      <Routes>
+        <Route path=":id" element={<Teacher/>} />
+      </Routes>
+    </div>
   )
 }
 
