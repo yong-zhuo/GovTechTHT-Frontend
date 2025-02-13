@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, defaults } from "chart.js/auto";
@@ -37,6 +38,7 @@ const GPADoubleLineChart = ({ firstDataSet, secondDataSet }) => {
 
     return (
         <>
+            <span className="text-xl mb-3 font-semibold">GPA Double Line Chart</span>
             <Line data={data} options={options} />
         </>
     )

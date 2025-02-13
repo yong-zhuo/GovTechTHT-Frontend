@@ -1,7 +1,7 @@
 import { students } from "../data/mockStudentData";
 
 /** Get total semesters */
-const semesters = students[0].semesterGpa.length;
+export const semesters = students[0].semesterGpa.length;
 
 /** Get the cumulative GPA for a student given their GPAs across 8 semesters*/
 export const getCumulativeGpa = (semesterGpas, semester) => {
@@ -29,7 +29,7 @@ export const getStudentSemesterGpas = (student) => {
 export const getStudentCumulativeGpas = (student) => {
     const cumulativeGpas = [];
     for (let i = 0; i < semesters; i++) {
-        cumulativeGpas.push(getCumulativeGpa(student.semesterGpa, i))
+        cumulativeGpas.push(getCumulativeGpa(student.semesterGpa, i + 1))
     }
     return cumulativeGpas
 }

@@ -25,7 +25,6 @@ const PersonsPage = ({ data, tableColumns}) => {
       <span className="text-3xl font-semibold text-slate-400 text-center sm:text-left capitalize">{role}</span>
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col bg-white rounded-lg shadow p-5 mt-5 w-full sm:w-3/4">
-          <span className="text-xl mb-3 font-semibold">GPA Line Chart</span>
           <GPADoubleLineChart firstDataSet={averageSemesterGpas} secondDataSet={averageCumulativeGpas} />
         </div>
         <div className="flex flex-col bg-white rounded-lg shadow p-5 mt-5 w-full sm:w-3/4">
