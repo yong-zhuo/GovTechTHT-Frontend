@@ -6,6 +6,7 @@ import { Chart as ChartJS, defaults } from "chart.js/auto";
 const GPADoubleLineChart = ({ firstDataSet, secondDataSet }) => {
 
     const data = {
+        //for each semester
         labels: ['1', '2', '3', '4', '5', '6', '7', '8'],
         datasets:
             [{
