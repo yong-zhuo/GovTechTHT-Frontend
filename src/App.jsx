@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './App.css'
-import Students from './pages/Students'
-import Teachers from './pages/Teachers'
 import SideBar from './components/SideBar'
+import StudentsPage from './pages/StudentsPage'
+import TeachersPage from './pages/TeachersPage'
 
 function App() {
 
@@ -17,9 +17,9 @@ function App() {
             <div className='flex-1 md:ml-48'>
               <Routes>
                 {/* Student Page*/}
-                <Route path="/students" element={<Students />} />
+                <Route path="/students" element={<StudentsPage />} />
                 {/* Teacher Page */}
-                <Route path="/teachers" element={<Teachers />} />
+                <Route path="/teachers" element={<TeachersPage />} />
               </Routes>
             </div>
           </div>

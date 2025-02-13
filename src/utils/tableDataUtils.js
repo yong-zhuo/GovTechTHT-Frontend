@@ -22,3 +22,4 @@ export const convertTeachersData = (teachers) => {
         avgCumulativeGPA: getAverageCumulativeGpa(teacher.semesterGpa, lastSemesterIndex)
     }));
 }
+
