@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 const PersonDetailCard = ({ role, name, details, id }) => {
 
     return (
