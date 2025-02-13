@@ -10,9 +10,9 @@ const Students = () => {
   const studentData = useMemo(() => students, [])
 
   return (
-    <div className="flex flex-col p-5">
+    <div className="flex flex-col p-5 w-full">
       <span className="text-3xl font-semibold text-slate-400">Students</span>
-      <div className="flex bg-gray-200 rounded-lg shadow-2xl">
+      <div className="flex flex-col bg-white rounded-lg shadow p-5">
         <Table data={studentData} columns={studentTableColumns} />
       </div>
       <Routes>

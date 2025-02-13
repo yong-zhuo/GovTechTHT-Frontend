@@ -29,8 +29,8 @@ export const teacherTableColumns = [
         accessorKey: 'name',
     },
     {
-        header: 'Avg. Semester GPA',
-        accessorKey: 'avgSemesterGPA',
+        header: 'Avg. Last Semester GPA',
+        accessorKey: 'avgLastSemesterGPA',
     },
     {
         header: 'Avg. Cumulative GPA',

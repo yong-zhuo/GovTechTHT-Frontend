@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useReactTable, flexRender, getCoreRowModel } from "@tanstack/react-table"
 
 const Table = ({ columns, data, sorting, onSortingChange }) => {
-
 
     const table = useReactTable({
         columns,
@@ -12,11 +12,11 @@ const Table = ({ columns, data, sorting, onSortingChange }) => {
     })
 
     return (
-        <div>
-            <table>
-                <thead>
+        <div className="w-full">
+            <table className="w-full">
+                <thead className="text-start">
                     {table.getHeaderGroups().map((headerGroup) => (
-                        <tr key={headerGroup.id}>
+                        <tr key={headerGroup.id} className="bg-gray-100">
                             {headerGroup.headers.map((header) =>
                                 <th key={header.id}>
                                     {flexRender(
