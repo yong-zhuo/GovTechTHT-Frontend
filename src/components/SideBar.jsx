@@ -5,8 +5,8 @@ import { sideBarLinks } from "../data/sideBarLinks"
 const SideBar = () => {
 
     /**Link styling */
-    const activeLink = 'flex items-center bg-gray-50 text-slate-400 justify-center'
-    const normalLink = 'flex items-center text-white hover:bg-gray-50 hover:text-slate-400 transition justify-center'
+    const activeLink = 'flex items-center bg-gray-50 text-slate-400'
+    const normalLink = 'flex items-center text-white hover:bg-gray-50 hover:text-slate-400 transition'
 
     return (
         <div className="h-screen md:overflow-hidden overflow-auto pb-10 bg-slate-400">
@@ -22,7 +22,7 @@ const SideBar = () => {
                                 to={item.link}
                                 className={({ isActive }) => (isActive ? activeLink : normalLink)}
                             >
-                                <item.icon className="text-2xl mr-2" />
+                                <item.icon className="text-2xl mr-2 ml-3" />
                                 <span className="capitalize text-xl">{item.name}</span>
                             </NavLink>
                         </div>
