@@ -32,7 +32,7 @@ const DataTable = ({ columns, data }) => {
                         <tr key={headerGroup.id} className="bg-gray-200 ">
                             {headerGroup.headers.map((header) =>
                                 <th key={header.id} onClick={header.column.getToggleSortingHandler()} className="cursor-pointer">
-                                    <div className="flex flex-row items-center gap-1 text-xs sm:text-md sm:p-3">
+                                    <div className="flex flex-row items-center gap-1 text-xs md:text-md sm:p-3">
                                         {flexRender(
                                             header.column.columnDef.header,
                                             header.getContext()

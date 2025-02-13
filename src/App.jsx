@@ -11,10 +11,10 @@ function App() {
       <div>
         <BrowserRouter>
           <div className='flex flex-row bg-gray-50 min-h-screen justify-between'>
-            <div className='hidden sm:block'>
+            <div className='hidden md:block fixed'>
               <SideBar />
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 md:ml-48'>
               <Routes>
                 {/* Student Page*/}
                 <Route path="/students" element={<Students />} />
