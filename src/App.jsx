@@ -4,26 +4,26 @@ import Students from './pages/Students'
 import Teachers from './pages/Teachers'
 import Student from './pages/Student'
 import Teacher from './pages/Teacher'
+import SideBar from './components/SideBar'
 
 function App() {
-
 
   return (
     <>
       <div>
         <BrowserRouter>
-          <div className='flex bg-white'>
-
+          <div className='flex bg-gray-50'>
+            <SideBar />
           </div>
 
           <Routes>
             {/* Student related pages */}
-            <Route path="/students" element={<Students/>}/>
-            <Route path="/student/:id" element={<Student/>}/>
+            <Route path="/students" element={<Students />} />
+            <Route path="/student/:id" element={<Student />} />
 
             {/* Teacher related pages */}
-            <Route path="/teachers" element={<Teachers/>}/>
-            <Route path="/teacher/:id" element={<Teacher/>}/>
+            <Route path="/teachers" element={<Teachers />} />
+            <Route path="/teacher/:id" element={<Teacher />} />
           </Routes>
         </BrowserRouter>
       </div>

@@ -2,7 +2,7 @@ import { useParams } from "react-router"
 
 const Student = () => {
 
-  const {id} = useParams()
+  const { id } = useParams()
 
   return (
     <div>{id}</div>
