@@ -4,17 +4,16 @@ import { students } from "../data/mockStudentData";
 const semesters = students[0].semesterGpa.length;
 
 /** Get the cumulative GPA for a student given their GPAs across 8 semesters*/
-export const getCumulativeGpa = (semesterGpas, semesterIndex) => {
-    if (semesterIndex < 0 || semesterIndex > semesters) {
-        throw new Error('Invalid number of semesters')
-    }
-    const totalGpa = semesterGpas.slice(0, semesterIndex + 1).reduce((acc, curr) => acc + curr, 0);
+export const getCumulativeGpa = (semesterGpas, semester) => {
+
+    const totalGpa = semesterGpas.slice(0, semester).reduce((acc, curr) => acc + curr, 0);
     
-    return parseFloat((totalGpa / (semesterIndex + 1)).toFixed(2))
+    return parseFloat((totalGpa / (semester)).toFixed(2))
 }
 
 /** Get the GPA for a student in a particular semester*/
-export const getSemesterGpa = (semesterGpas, semesterIndex) => {
+export const getSemesterGpa = (semesterGpas, semester) => {
+    const semesterIndex = semester - 1;
     if (semesterIndex < 0 || semesterIndex > semesters) {
         throw new Error('Invalid semester index')
     }
@@ -36,9 +35,9 @@ export const getStudentCumulativeGpas = (student) => {
 }
 
 /** Get the average semester GPA for a student in a particular semester */
-export const getAverageSemesterGpa = (students, semesterIndex) => {
+export const getAverageSemesterGpa = (students, semester) => {
     const totalGpa = students.reduce((acc, student) => {
-        return acc + getSemesterGpa(student.semesterGpa, semesterIndex)
+        return acc + getSemesterGpa(student.semesterGpa, semester)
     }, 0);
     return (totalGpa / students.length).toFixed(2)
 };
@@ -56,7 +55,7 @@ export const getAverageCumulativeGpa = (students, semesterIndex) => {
 export const getAverageSemesterGpas = (students) => {
     const averageSemesterGpas = [];
     for (let i = 0; i < semesters; i++) {
-        averageSemesterGpas.push(getAverageSemesterGpa(students, i))
+        averageSemesterGpas.push(getAverageSemesterGpa(students, i + 1))
     }
 
     return averageSemesterGpas
@@ -66,17 +65,17 @@ export const getAverageSemesterGpas = (students) => {
 export const getAverageCumulativeGpas = (students) => {
     const averageCumulativeGpas = [];
     for (let i = 0; i < semesters; i++) {
-        averageCumulativeGpas.push(getAverageCumulativeGpa(students, i))
+        averageCumulativeGpas.push(getAverageCumulativeGpa(students, i + 1))
         
     }
     return averageCumulativeGpas
 };
 
 /** Get the average cumulative and last semester GPA for all students taught by the teacher*/
-export const getTeacherAverageGpas = (students, teacher, semesterIndex) => {
+export const getTeacherAverageGpas = (students, teacher, semester) => {
     //Get the students taught by the teacher
     const teacherStudents = students.filter(student => teacher.students.includes(student.id))
-    const avgLastSemesterGPA = getAverageSemesterGpa(teacherStudents, semesterIndex)
-    const avgCumulativeGPA = getAverageCumulativeGpa(teacherStudents, semesterIndex)
+    const avgLastSemesterGPA = getAverageSemesterGpa(teacherStudents, semester)
+    const avgCumulativeGPA = getAverageCumulativeGpa(teacherStudents, semester)
     return { avgLastSemesterGPA, avgCumulativeGPA }
 };
