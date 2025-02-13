@@ -1,6 +1,6 @@
 import { PiChalkboardTeacher, PiHouse, PiStudent } from "react-icons/pi";
 
-export const sideBarLinks = [
+export const links = [
     {
         name: "home",
         link:"/",
@@ -17,3 +17,7 @@ export const sideBarLinks = [
         icon: PiChalkboardTeacher,
     }
 ]
+
+/**Link styling */
+export const activeLink = 'flex items-center bg-gray-50 text-slate-400'
+export const normalLink = 'flex items-center text-white hover:bg-gray-50 hover:text-slate-400 transition'

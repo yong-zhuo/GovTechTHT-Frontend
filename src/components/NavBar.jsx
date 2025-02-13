@@ -2,25 +2,21 @@ import { PiExam } from "react-icons/pi"
 import { Link, NavLink } from "react-router"
 import { activeLink, links, normalLink } from "../data/links"
 
-const SideBar = () => {
-
-
-
+const NavBar = () => {
     return (
-        <div className="h-screen md:overflow-hidden overflow-auto pb-10 bg-slate-400">
-            <div className="flex flex-col justify-between items-center ">
-                <Link to="/" className="flex flex-row text-white font-semibold items-center justify-center gap-1 text-2xl p-4 border-b border-gray-50" >
-                    <PiExam /> <span>GPATracker</span>
+        <div className="fixed z-20 flex items-center bg-slate-400 w-full h-[8vh]">
+            <div className="flex flex-row justify-between items-center w-full">
+                <Link to="/">
+                    <PiExam className="h-10 w-10 ml-5 text-gray-50" />
                 </Link>
-                {/** Sidebar Links */}
-                <div className="mt-5 w-full ">
+                {/** Navbar Links */}
+                <div className="flex flex-row items-end gap-2 mr-5">
                     {links.map((item) => (
-                        <div key={item.name} className="mt-5">
+                        <div key={item.name}>
                             <NavLink
                                 to={item.link}
                                 className={({ isActive }) => (isActive ? activeLink : normalLink)}
                             >
-                                <item.icon className="text-2xl mr-2 ml-3" />
                                 <span className="capitalize text-xl">{item.name}</span>
                             </NavLink>
                         </div>
@@ -31,4 +27,4 @@ const SideBar = () => {
     )
 }
 
-export default SideBar
+export default NavBar
