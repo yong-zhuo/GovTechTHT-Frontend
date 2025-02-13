@@ -1,3 +1,8 @@
+import { students } from "../data/mockStudentData";
+
+/** Get total semesters */
+const semesters = students[0].semesterGpa.length - 1;
+
 export const getCumulativeGpa = (semesterGpa) => {
     const totalGpa = semesterGpa.reduce((acc, curr) => acc + curr, 0)
     const semesters = semesterGpa.length
