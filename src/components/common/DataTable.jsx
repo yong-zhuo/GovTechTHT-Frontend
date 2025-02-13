@@ -2,10 +2,12 @@
 import { useReactTable, flexRender, getCoreRowModel, getSortedRowModel } from "@tanstack/react-table"
 import { useState } from "react"
 import { LuChevronDown, LuChevronsUpDown, LuChevronUp } from "react-icons/lu"
+import { Link, useLocation } from "react-router"
 
-const Table = ({ columns, data }) => {
+const DataTable = ({ columns, data }) => {
 
     const [sorting, setSorting] = useState([])
+    const location = useLocation()
 
     const table = useReactTable({
         columns,
@@ -23,6 +25,7 @@ const Table = ({ columns, data }) => {
     return (
         <div>
             <table className="w-full">
+
                 {/** Table Header */}
                 <thead className="text-left">
                     {table.getHeaderGroups().map((headerGroup) => (
@@ -44,24 +47,32 @@ const Table = ({ columns, data }) => {
                         </tr>
                     ))}
                 </thead>
+
                 {/** Table Body */}
                 <tbody>
                     {table.getRowModel().rows.map(row => (
                         <tr key={row.id}>
                             {row.getVisibleCells().map(cell => (
                                 <td key={cell.id} className="sm:p-3">
-                                    {flexRender(
-                                        cell.column.columnDef.cell,
-                                        cell.getContext()
-                                    )}
+                                    {cell.column.id === 'name' ? (
+                                        <Link to={`${location.pathname}/${row.original.id}`}
+                                            className="underline hover:text-slate-400 transition">
+                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                        </Link>
+                                    ) :
+                                        flexRender(
+                                            cell.column.columnDef.cell,
+                                            cell.getContext()
+                                        )}
                                 </td>
                             ))}
                         </tr>
                     ))}
                 </tbody>
+
             </table>
         </div>
     )
 }
 
-export default Table
+export default DataTable
