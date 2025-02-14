@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import { convertStudentsData } from "../utils/tableDataUtils"
 import PersonsPage from "./PersonsPage"
 import { studentTableColumns } from "../data/tableColumns"
-import { LuLoaderCircle } from "react-icons/lu"
+import Loading from "../components/Loading"
 
 const StudentsPage = () => {
 
@@ -30,7 +30,7 @@ const StudentsPage = () => {
     const studentsData = useMemo(() => convertStudentsData(students), [students])
 
     if (isLoading) {
-        return <div className="flex flex-row items-center text-slate-600 gap-1 h-screen justify-center text-3xl">Loading<LuLoaderCircle className="animate-spin" /></div>
+        return <Loading />
     }
 
     return (

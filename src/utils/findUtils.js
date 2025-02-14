@@ -4,7 +4,7 @@ export const findStudentById = (students, id) => {
 }
 
 /** Find teacher by their Id */
-export const findTeacherById = (students, id) => {
+export const findTeacherById = (teachers, id) => {
     return teachers.find(teacher => teacher.id === parseInt(id))
 }
 
