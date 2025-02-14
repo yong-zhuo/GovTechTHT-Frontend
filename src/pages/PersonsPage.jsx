@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useLocation } from "react-router"
 import DataTable from "../components/DataTable"
-import { students } from "../data/mockStudentData"
 import GPADoubleLineChart from "../components/GPADoubleLineChart"
 import { getAverageCumulativeGpas, getAverageSemesterGpas } from "../utils/gpaUtils"
 
-const PersonsPage = ({ data, tableColumns}) => {
+const PersonsPage = ({ data, tableColumns, students}) => {
 
   const location  = useLocation()
   const role = location.pathname.split('/')[1]

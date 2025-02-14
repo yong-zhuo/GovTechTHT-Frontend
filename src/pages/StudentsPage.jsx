@@ -35,7 +35,7 @@ const StudentsPage = () => {
 
     return (
         <>
-            <PersonsPage data={studentsData} tableColumns={studentTableColumns} />
+            <PersonsPage data={studentsData} tableColumns={studentTableColumns} students={students} />
         </>
     )
 }
