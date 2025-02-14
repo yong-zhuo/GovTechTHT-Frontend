@@ -1,8 +1,7 @@
-import { students } from "../data/mockStudentData";
 import { findStudentsTaughtByTeacher } from "./findUtils";
 
 /** Get total semesters */
-export const semesters = students[0].semesterGpa.length;
+export const semesters = 8;
 
 /** Get the cumulative GPA for a student given their GPAs across 8 semesters*/
 export const getCumulativeGpa = (semesterGpas, semester) => {
