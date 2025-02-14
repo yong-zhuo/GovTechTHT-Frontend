@@ -3,11 +3,38 @@ import ProfilePage from "./ProfilePage"
 import { findStudentById } from "../utils/findUtils"
 import { getCumulativeGpa, getSemesterGpa, getStudentCumulativeGpas, getStudentSemesterGpas, semesters } from "../utils/gpaUtils"
 import BackButton from "../components/profile/BackButton"
+import { useEffect, useState } from "react"
+import Loading from "../components/Loading"
 
 const StudentProfilePage = () => {
 
     const { id } = useParams()
-    const student = findStudentById(id)
+
+    const [student, setStudent] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+        const fetchStudent = async () => {
+            setIsLoading(true)
+
+            try {
+                const response = await fetch('/data/students.json')
+                const data = await response.json()
+                setStudent(findStudentById(data, id))
+            } catch (e) {
+                alert('Error fetching student data')
+            } finally {
+                setIsLoading(false)
+            }
+        }
+
+        fetchStudent()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    if (isLoading) {
+        return <Loading />
+    }
 
     if (!student) {
         return (

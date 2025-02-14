@@ -6,27 +6,34 @@ import Loading from "../components/Loading"
 
 const TeachersPage = () => {
 
+  const [students, setStudents] = useState([])
   const [teachers, setTeachers] = useState([])
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const fetchTeachers = async () => {
-      setIsLoading(true)
-
+    const fetchData = async () => {
+      setIsLoading(true);
       try {
-        const response = await fetch('/data/teachers.json')
-        const data = await response.json()
-        setTeachers(data)
+        const [teachersResponse, studentsResponse] = await Promise.all([
+          fetch("/data/teachers.json"),
+          fetch("/data/students.json")
+        ]);
+
+        const teachersData = await teachersResponse.json();
+        const studentsData = await studentsResponse.json();
+        setTeachers(teachersData);
+        setStudents(studentsData);
       } catch (e) {
-        alert('Error fetching students data')
+        alert("Error fetching data");
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
-    }
-    fetchTeachers()
+    };
+
+    fetchData();
   }, [])
 
-  const teachersData = useMemo(() => convertTeachersData(teachers), [teachers])
+  const teachersData = useMemo(() => convertTeachersData(students, teachers), [students, teachers])
 
   if (isLoading) {
     return <Loading />
