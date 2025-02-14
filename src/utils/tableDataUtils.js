@@ -11,9 +11,9 @@ export const convertStudentsData = (students) => {
     }))
 }
 
-export const convertTeachersData = (teachers) => {
+export const convertTeachersData = (students, teachers) => {
     return teachers.map(teacher => {
-        const { avgLastSemesterGPA, avgCumulativeGPA } = getTeacherAverageGpas(teacher, semesters)
+        const { avgLastSemesterGPA, avgCumulativeGPA } = getTeacherAverageGpas(students, teacher, semesters)
         
         return {
             id: teacher.id,

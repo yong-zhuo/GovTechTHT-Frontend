@@ -72,9 +72,9 @@ export const getAverageCumulativeGpas = (students) => {
 };
 
 /** Get the average cumulative and last semester GPA for all students taught by the teacher*/
-export const getTeacherAverageGpas = (teacher, semester) => {
+export const getTeacherAverageGpas = (students, teacher, semester) => {
     //Get the students taught by the teacher
-    const teacherStudents = findStudentsTaughtByTeacher(teacher)
+    const teacherStudents = findStudentsTaughtByTeacher(students, teacher)
     const avgLastSemesterGPA = getAverageSemesterGpa(teacherStudents, semester)
     const avgCumulativeGPA = getAverageCumulativeGpa(teacherStudents, semester)
     return { avgLastSemesterGPA, avgCumulativeGPA }
