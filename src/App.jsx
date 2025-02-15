@@ -10,19 +10,17 @@ import NavBar from './components/NavBar'
 import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
-
   return (
     <>
-
       <BrowserRouter>
-        <div className='flex flex-row bg-gray-50 min-h-screen overflow-auto'>
-          <div className='hidden md:block fixed'>
+        <div className="flex flex-row bg-gray-50 min-h-screen overflow-auto">
+          <div className="hidden md:block fixed">
             <SideBar />
           </div>
-          <div className='md:hidden block fixed'>
+          <div className="md:hidden block fixed">
             <NavBar />
           </div>
-          <div className='flex-1 md:ml-48'>
+          <div className="flex-1 md:ml-48">
             <Routes>
               {/* Home Page */}
               <Route path="/" element={<HomePage />} />
@@ -33,12 +31,11 @@ function App() {
               <Route path="/teachers" element={<TeachersPage />} />
               <Route path="/teachers/:id" element={<TeacherProfilePage />} />
               {/* Not Found Page */}
-              <Route path="*" element={<NotFoundPage />}/>
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
         </div>
       </BrowserRouter>
-
     </>
   )
 }
