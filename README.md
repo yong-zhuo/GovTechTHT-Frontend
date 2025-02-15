@@ -5,7 +5,7 @@
 
 A React web-app built for GovTech Take-Home Test (Frontend).
 
-The app simulates a GPA monitoring tool, featuring sortable tables, student and teacher profiles and GPA trend visualisation in the form of line charts. Data is fetched from mock JSON files.
+The app simulates a GPA monitoring tool, featuring sortable tables, student and teacher profiles and GPA trend visualisation in the form of line charts. Mock data is fetched from static JSON files.
 
 The app is also hosted on Vercel: https://govtechtht-frontend.vercel.app/
 
@@ -14,7 +14,7 @@ The app is also hosted on Vercel: https://govtechtht-frontend.vercel.app/
 
 * Each student or teacher has a unique Id associated to them in the event of students/teachers with the same name.
 
-* Assume cumulative GPA is equal to sum of all semester GPAs divided by the current semester.
+* Cumulative GPA is equal to sum of all semester GPAs divided by the current semester.
 
 
 ## Run Website Locally
