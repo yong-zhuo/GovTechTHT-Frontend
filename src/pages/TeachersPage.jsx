@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useMemo, useState } from 'react'
 import PersonsPage from './PersonsPage'
 import { convertTeachersData } from '../utils/tableDataUtils'

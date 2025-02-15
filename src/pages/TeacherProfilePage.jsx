@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useParams } from 'react-router'
 import BackButton from '../components/profile/BackButton'
 import {
