@@ -1,6 +1,6 @@
 import { PiExam } from "react-icons/pi"
 import { Link, NavLink } from "react-router"
-import { activeLink, links, normalLink } from "../data/links"
+import { activeLink, links, normalLink } from "../constants/links"
 
 const SideBar = () => {
 

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react"
 import PersonsPage from "./PersonsPage"
 import { convertTeachersData } from "../utils/tableDataUtils"
-import { teacherTableColumns } from "../data/tableColumns"
+import { teacherTableColumns } from "../constants/tableColumns"
 import Loading from "../components/Loading"
 
 const TeachersPage = () => {
